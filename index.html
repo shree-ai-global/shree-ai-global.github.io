@@ -4,53 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shree.AI Digital | Next-Gen Marketing</title>
-    <!-- Google Fonts -->
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        /* Base Styling */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: #0b0f19; color: #f3f4f6; overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; }
-        
-        /* Glassmorphism Effect */
         .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; }
-
-        /* Hero / Header Section */
         header { text-align: center; padding: 100px 20px 60px 20px; position: relative; }
         header h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 15px; }
         .brand-name { background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 30px rgba(0, 242, 254, 0.2); }
         header p { font-size: 1.2rem; color: #9ca3af; max-width: 600px; margin: 0 auto; line-height: 1.6; }
         header p span { color: #00f2fe; font-weight: 600; }
-
         .main-content { flex: 1; }
-
-        /* Services Grid */
         .services-container { max-width: 1100px; margin: 0 auto 60px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
         .service-box { padding: 40px 30px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer; }
         .service-box:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.06); border-color: #00f2fe; box-shadow: 0 15px 30px rgba(0, 242, 254, 0.1); }
-        
-        /* Cyber Neon Badges */
         .badge { display: inline-block; padding: 6px 12px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; border-radius: 100px; margin-bottom: 20px; }
         .b-purple { background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3); }
         .b-cyan { background: rgba(6, 182, 212, 0.15); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.3); }
         .b-pink { background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3); }
-
         .service-box h3 { font-size: 1.5rem; margin-bottom: 15px; color: #fff; }
         .service-box p { font-size: 0.95rem; color: #9ca3af; line-height: 1.6; }
-
-        /* Contact Section */
         .contact-section { max-width: 550px; margin: 0 auto 100px auto; padding: 50px 40px; }
         .contact-section h2 { text-align: center; font-size: 2rem; font-weight: 800; margin-bottom: 35px; background: linear-gradient(to right, #fff, #9ca3af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
         .form-group { margin-bottom: 25px; }
         .form-group label { display: block; margin-bottom: 10px; font-weight: 600; font-size: 0.85rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 1px; }
         .form-group input, .form-group textarea { width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px; font-size: 1rem; color: #fff; transition: all 0.3s; }
         .form-group textarea { height: 130px; resize: none; }
         .form-group input:focus, .form-group textarea:focus { background: rgba(255, 255, 255, 0.08); border-color: #00f2fe; outline: none; box-shadow: 0 0 15px rgba(0, 242, 254, 0.2); }
-        
         .submit-btn { width: 100%; background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); color: #0b0f19; border: none; padding: 18px; font-size: 1.1rem; border-radius: 14px; cursor: pointer; font-weight: 800; transition: all 0.3s; box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3); }
         .submit-btn:hover { transform: scale(1.02); box-shadow: 0 8px 30px rgba(0, 242, 254, 0.5); }
-
-        /* Footer */
         footer { background: rgba(255, 255, 255, 0.02); border-top: 1px solid rgba(255, 255, 255, 0.05); text-align: center; padding: 30px 20px; font-size: 0.95rem; color: #9ca3af; }
         footer span { background: linear-gradient(135deg, #f472b6 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 600; }
     </style>
@@ -81,12 +63,10 @@
             </div>
         </div>
 
-        <!-- Contact Form Section -->
+        <!-- JS Powered Contact Form Section -->
         <div class="contact-section glass-card">
             <h2>Let's Build Something Big</h2>
-            <form action="https://web3forms.com" method="POST">
-                
-                <!-- Aapki Personal Access Key Yahan Set Ho Gayi Hai -->
+            <form id="contactForm">
                 <input type="hidden" name="access_key" value="c64501be-ea9d-48e3-b8fd-4308902b25a3">
 
                 <div class="form-group">
@@ -101,7 +81,7 @@
                     <label>Tell us your vision</label>
                     <textarea name="message" placeholder="Drop your project ideas, goals, or just say hey..." required></textarea>
                 </div>
-                <button type="submit" class="submit-btn">Launch Inquiry 🚀</button>
+                <button type="submit" class="submit-btn" id="submitBtn">Launch Inquiry 🚀</button>
             </form>
         </div>
     </div>
@@ -109,6 +89,47 @@
     <footer>
         <p>&copy; 2026 Shree.AI Digital. Design and Developed by <span>Surbhi Sharma</span> ✨</p>
     </footer>
+
+    <!-- Advanced Tracking & Submission Script -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const btn = document.getElementById('submitBtn');
+            btn.innerText = "Sending... ⚡";
+            btn.disabled = true;
+
+            const formData = new FormData(this);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            fetch('https://web3forms.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let res = await response.json();
+                if (response.status == 200) {
+                    alert("Awesome! Check your Email inbox! 🎉");
+                    document.getElementById('contactForm').reset();
+                } else {
+                    alert("Something went wrong: " + res.message);
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                alert("Form submission failed. Internet check karein!");
+            })
+            .then(() => {
+                btn.innerText = "Launch Inquiry 🚀";
+                btn.disabled = false;
+            });
+        });
+    </script>
 
 </body>
 </html>
