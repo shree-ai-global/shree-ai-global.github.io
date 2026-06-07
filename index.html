@@ -4,33 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shree.AI Digital | Next-Gen Marketing</title>
-    <!-- Google Fonts se modern font link kiya -->
+    <!-- Google Fonts -->
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
         /* Base Styling */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-        body { background-color: #0b0f19; color: #f3f4f6; overflow-x: hidden; }
+        body { background-color: #0b0f19; color: #f3f4f6; overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; }
         
-        /* Glassmorphism Effect for containers */
+        /* Glassmorphism Effect */
         .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; }
 
         /* Hero / Header Section */
         header { text-align: center; padding: 100px 20px 60px 20px; position: relative; }
-        
-        /* Trending Gradient Text for Brand Name */
         header h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 15px; }
         .brand-name { background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 30px rgba(0, 242, 254, 0.2); }
-        
         header p { font-size: 1.2rem; color: #9ca3af; max-width: 600px; margin: 0 auto; line-height: 1.6; }
         header p span { color: #00f2fe; font-weight: 600; }
 
+        /* Main Content wrapper to push footer down */
+        .main-content { flex: 1; }
+
         /* Services Grid */
         .services-container { max-width: 1100px; margin: 0 auto 60px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        
         .service-box { padding: 40px 30px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer; }
         .service-box:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.06); border-color: #00f2fe; box-shadow: 0 15px 30px rgba(0, 242, 254, 0.1); }
         
-        /* Cyber Neon Badges for services */
+        /* Cyber Neon Badges */
         .badge { display: inline-block; padding: 6px 12px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; border-radius: 100px; margin-bottom: 20px; }
         .b-purple { background: rgba(139, 92, 246, 0.15); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3); }
         .b-cyan { background: rgba(6, 182, 212, 0.15); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.3); }
@@ -39,72 +38,77 @@
         .service-box h3 { font-size: 1.5rem; margin-bottom: 15px; color: #fff; }
         .service-box p { font-size: 0.95rem; color: #9ca3af; line-height: 1.6; }
 
-        /* Contact Section (GenZ Glassmorphism Form) */
+        /* Contact Section */
         .contact-section { max-width: 550px; margin: 0 auto 100px auto; padding: 50px 40px; }
         .contact-section h2 { text-align: center; font-size: 2rem; font-weight: 800; margin-bottom: 35px; background: linear-gradient(to right, #fff, #9ca3af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
         .form-group { margin-bottom: 25px; }
         .form-group label { display: block; margin-bottom: 10px; font-weight: 600; font-size: 0.85rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 1px; }
-        
-        /* Dark Theme Inputs */
         .form-group input, .form-group textarea { width: 100%; padding: 16px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px; font-size: 1rem; color: #fff; transition: all 0.3s; }
         .form-group textarea { height: 130px; resize: none; }
-        
-        /* Glow effect on click */
         .form-group input:focus, .form-group textarea:focus { background: rgba(255, 255, 255, 0.08); border-color: #00f2fe; outline: none; box-shadow: 0 0 15px rgba(0, 242, 254, 0.2); }
         
-        /* Futuristic Interactive Button */
         .submit-btn { width: 100%; background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); color: #0b0f19; border: none; padding: 18px; font-size: 1.1rem; border-radius: 14px; cursor: pointer; font-weight: 800; transition: all 0.3s; box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3); }
         .submit-btn:hover { transform: scale(1.02); box-shadow: 0 8px 30px rgba(0, 242, 254, 0.5); }
+
+        /* Trending Gen-Z Footer Section */
+        footer { background: rgba(255, 255, 255, 0.02); border-top: 1px solid rgba(255, 255, 255, 0.05); text-align: center; padding: 30px 20px; font-size: 0.95rem; color: #9ca3af; }
+        footer span { background: linear-gradient(135deg, #f472b6 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 600; }
     </style>
 </head>
 <body>
 
-    <!-- Hero Header -->
-    <header>
-        <h1>Welcome to <span class="brand-name">Shree.AI Digital</span></h1>
-        <p>We don't just follow trends, we create them. High-voltage digital marketing powered by <span>AI intelligence</span>.</p>
-    </header>
+    <div class="main-content">
+        <!-- Hero Header -->
+        <header>
+            <h1>Welcome to <span class="brand-name">Shree.AI Digital</span></h1>
+            <p>We don't just follow trends, we create them. High-voltage digital marketing powered by <span>AI intelligence</span>.</p>
+        </header>
 
-    <!-- Services Container -->
-    <div class="services-container">
-        <div class="service-box glass-card">
-            <span class="badge b-purple">Instant Scale</span>
-            <h3>Hyper-Targeted Ads</h3>
-            <p>Crush your competition on Instagram, TikTok, and Google with AI-optimized ad creatives that stop the scroll instantly.</p>
+        <!-- Services Container -->
+        <div class="services-container">
+            <div class="service-box glass-card">
+                <span class="badge b-purple">Instant Scale</span>
+                <h3>Hyper-Targeted Ads</h3>
+                <p>Crush your competition on Instagram, TikTok, and Google with AI-optimized ad creatives that stop the scroll instantly.</p>
+            </div>
+            <div class="service-box glass-card">
+                <span class="badge b-cyan">Gen-Z Viral</span>
+                <h3>Growth Hacking</h3>
+                <p>Smart social media strategies designed to turn your brand into a viral sensation and spark organic community hype.</p>
+            </div>
+            <div class="service-box glass-card">
+                <span class="badge b-pink">Top Rank</span>
+                <h3>Next-Gen SEO</h3>
+                <p>Dominate modern search engines and AI answers with semantic optimization, driving compounding free traffic.</p>
+            </div>
         </div>
-        <div class="service-box glass-card">
-            <span class="badge b-cyan">Gen-Z Viral</span>
-            <h3>Growth Hacking</h3>
-            <p>Smart social media strategies designed to turn your brand into a viral sensation and spark organic community hype.</p>
-        </div>
-        <div class="service-box glass-card">
-            <span class="badge b-pink">Top Rank</span>
-            <h3>Next-Gen SEO</h3>
-            <p>Dominate modern search engines and AI answers with semantic optimization, driving compounding free traffic.</p>
+
+        <!-- Contact Form Section -->
+        <div class="contact-section glass-card">
+            <h2>Let's Build Something Big</h2>
+            <form action="submit.php" method="POST">
+                <div class="form-group">
+                    <label>What should we call you?</label>
+                    <input type="text" name="name" placeholder="Your name or brand" required>
+                </div>
+                <div class="form-group">
+                    <label>Where should we drop a line?</label>
+                    <input type="email" name="email" placeholder="Your best email" required>
+                </div>
+                <div class="form-group">
+                    <label>Tell us your vision</label>
+                    <textarea name="message" placeholder="Drop your project ideas, goals, or just say hey..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Launch Inquiry 🚀</button>
+            </form>
         </div>
     </div>
 
-    <!-- Contact Form Section -->
-    <div class="contact-section glass-card">
-        <h2>Let's Build Something Big</h2>
-        <form action="submit.php" method="POST">
-            <div class="form-group">
-                <label>What should we call you?</label>
-                <input type="text" name="name" placeholder="Your name or brand" required>
-            </div>
-            <div class="form-group">
-                <label>Where should we drop a line?</label>
-                <input type="email" name="email" placeholder="Your best email" required>
-            </div>
-            <div class="form-group">
-                <label>Tell us your vision</label>
-                <input type="hidden" name="message" id="message_hidden">
-                <textarea name="message" placeholder="Drop your project ideas, goals, or just say hey..." required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Launch Inquiry 🚀</button>
-        </form>
-    </div>
+    <!-- Footer Area -->
+    <footer>
+        <p>&copy; 2026 Shree.AI Digital. Design and Developed by <span>Surbhi Sharma</span> ✨</p>
+    </footer>
 
 </body>
 </html>
