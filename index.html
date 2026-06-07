@@ -81,16 +81,12 @@
             </div>
         </div>
 
-        <!-- 100% Working Fail-Safe Form -->
+        <!-- 100% Working Fail-Safe Form with JavaScript Event Handling -->
         <div class="contact-section glass-card">
             <h2>Let's Build Something Big</h2>
-            <form action="https://web3forms.com" method="POST">
-                
+            <form id="secureForm">
                 <!-- Aapki Personal Access Key -->
                 <input type="hidden" name="access_key" value="c64501be-ea9d-48e3-b8fd-4308902b25a3">
-                
-                <!-- Submit hone ke baad user wapas aapki site par hi redirect ho jaye -->
-                <input type="hidden" name="redirect" value="https://web3forms.com">
 
                 <div class="form-group">
                     <label>What should we call you?</label>
@@ -104,7 +100,7 @@
                     <label>Tell us your vision</label>
                     <textarea name="message" placeholder="Drop your project ideas, goals, or just say hey..." required></textarea>
                 </div>
-                <button type="submit" class="submit-btn">Launch Inquiry 🚀</button>
+                <button type="submit" class="submit-btn" id="subBtn">Launch Inquiry 🚀</button>
             </form>
         </div>
     </div>
@@ -112,6 +108,41 @@
     <footer>
         <p>&copy; 2026 Shree.AI Digital. Design and Developed by <span>Surbhi Sharma</span> ✨</p>
     </footer>
+
+    <!-- GitHub Bypass Action Script -->
+    <script>
+        document.getElementById('secureForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const btn = document.getElementById('subBtn');
+            btn.innerText = "Sending... ⚡";
+            btn.disabled = true;
+
+            const formData = new FormData(this);
+
+            fetch('https://web3forms.com', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.success) {
+                    alert("Awesome! Check your Email inbox! 🎉");
+                    document.getElementById('secureForm').reset();
+                } else {
+                    alert("Error: " + data.message);
+                }
+            })
+            .catch(error => {
+                alert("Network issue, but trying secondary post method...");
+                this.submit(); 
+            })
+            .finally(() => {
+                btn.innerText = "Launch Inquiry 🚀";
+                btn.disabled = false;
+            });
+        });
+    </script>
 
 </body>
 </html>
